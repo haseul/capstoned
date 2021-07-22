@@ -1,0 +1,18 @@
+<main role="main" class="inner cover">
+
+  <h1 class="cover-heading">Cover your page.</h1>
+  <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+  <p class="lead">
+
+    <form action="/" method="POST" enctype="multipart/form-data">
+      <input type="file" name="image" id="fileToUpload">
+      <input type="submit" value="Upload Image" name="submit">
+    </form>
+    {% if output %}
+    <center><img src="{{output}}"></center>
+    {% else %}
+    <img src="../static/uploads/output/ebfa9d0d1bfe457fa25a1566ff003fef.jpg">
+    {% endif %}
+  </p>
+
+</main>
