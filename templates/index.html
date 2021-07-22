@@ -8,10 +8,12 @@
 
     <title>Plastic Waste Dectection</title>
    <!-- Bootstrap core CSS -->
+
     <link href="../static/web/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../static/web/cover.css" rel="stylesheet">
+    <link href="../static/test.css" rel="stylesheet">
   <body class="text-center">
 
 
@@ -23,7 +25,7 @@
           <h3 class="masthead-brand">Plastic Waste Dectection &nbsp;&nbsp;&nbsp;</h3>
           <nav class="nav nav-masthead justify-content-center">
             <a class="nav-link" href="#home" data-toggle="tab" active>Home</a>
-            <!-- <a class="nav-link" href="#features" data-toggle="tab">Features</a> -->
+            <a class="nav-link" href="#information" data-toggle="tab">Information</a>
             <!-- <a class="nav-link" href="#team" data-toggle="tab">Team</a> -->
           </nav>
         </div>
@@ -36,9 +38,9 @@
             <!-- Overview Tab-Pane -->
             <div class="tab-content">
             <div id="home" class="tab-pane active">{% include 'upload.html' %}</div>
-            <div id="features" class="tab-pane">{% include 'features.html' %}</div>
+            <div id="information" class="tab-pane">{% include 'info.html' %}</div>
             <div id="team" class="tab-pane">{% include 'team.html' %}</div>
-            
+
 
               <footer class="mastfoot mt-auto">
                 <div class="inner"></div>
@@ -48,9 +50,13 @@
             </div>
 
       {% block script %}
+      <script src="../static/test.js"></script>
       <script src="../static/web/jquery.min.js"></script>
       <script src="../static/web/jquery-1.9.1.min.js"></script>
       <script src="../static/web/bootstrap.min.js"></script>
+      <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
       <!-- <script src="//code.jquery.com/jquery-1.9.1.min.js"></script> -->
       <script type="text/javascript">
         $(function() {
