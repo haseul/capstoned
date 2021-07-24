@@ -1,6 +1,6 @@
 # plastic-waste-detection
 
-Project for Capstone (CSRS4)
+Project for Capstone (CSRS4), inspired by [WebsiteYOLO](https://github.com/v-iashin/WebsiteYOLO)
 
 ### Idea
 One of the sustainable development goals of the united nation is responsible consumption and production, the world has been producing plastic in a drastic way that it has been harming our environment. In response to the above-mentioned concerns, we came up with an idea which is detecting a plastic waste using a [YOLO v4 algorithm](https://github.com/AlexeyAB/darknet).
