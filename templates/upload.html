@@ -47,6 +47,7 @@
             <img data-toggle="magnify" src="{{output}}">
             <br>
 
+              {% if obj %}
               <table class="table table-bordered table-hover" style="width: 100%;">
                 <thead class="thead-light">
                   <tr>
@@ -63,6 +64,9 @@
                   {% endfor %}
                 </tbody>
               </table>
+              {% else %}
+              <span style="color:white;font-weight:bold">No Plastic Objects Detected!</span>
+              {% endif %}
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
