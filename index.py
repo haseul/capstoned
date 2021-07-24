@@ -15,9 +15,9 @@ def index():
 
         path = os.path.join(app.config["UPLOADS_PATH"], image.filename)
         image.save(path)
-        image_output = object_detect(path)
+        image_output, obj_count = object_detect(path)
 
-        return render_template('index.html', file=image.filename, output=image_output)
+        return render_template('index.html', file=image.filename, output=image_output, objc=obj_count)
     else:
         return render_template('index.html', file=False)
 

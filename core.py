@@ -31,8 +31,8 @@ def object_detect(path):
 
     classes, scores, boxes = model.detect(my_img, conf_threshhold, nms_threshhold)
 
-    for (class_id, score, box) in zip(classes, scores, boxes):
-        print(f"{class_id} {score} {box}")
+    # for (class_id, score, box) in zip(classes, scores, boxes):
+    #     print(f"{class_id} {score} {box}")
 
     colors = np.random.uniform(0, 255, size=(len(classes), 3))
 
@@ -45,6 +45,8 @@ def object_detect(path):
         i += 1
 
     objects = [class_names[x[0]] for x in classes]
+    obj_count = {i: objects.count(i) for i in objects}
+    
     c_pos = (10,50)
     res2 = cv.putText(my_img, 'COUNT', c_pos, cv.FONT_HERSHEY_SIMPLEX, 0.5, (209, 80, 0, 255), 2)
 
@@ -62,4 +64,4 @@ def object_detect(path):
 
     cv.imwrite(path, res2)
 
-    return path
+    return path, obj_count
