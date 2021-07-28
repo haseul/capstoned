@@ -22,7 +22,7 @@ def object_detect(path):
     # net = cv.dnn.readNet('./model/yolov4-tiny.weights', './model/yolov4-tiny.cfg')
 
     # custom yolov4 detector
-    net = cv.dnn.readNet('./model/plastic2.weights', './model/plastic.cfg')
+    net = cv.dnn.readNet('./model/plastic.weights', './model/plastic.cfg')
     net.setPreferableBackend(cv.dnn.DNN_BACKEND_CUDA)
     net.setPreferableTarget(cv.dnn.DNN_TARGET_CUDA)
 
