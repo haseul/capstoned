@@ -22,7 +22,7 @@ def object_detect(path):
     # net = cv.dnn.readNet('./model/yolov4-tiny.weights', './model/yolov4-tiny.cfg')
 
     # custom yolov4 detector
-    net = cv.dnn.readNet('./model/plastic.weights', './model/plastic.cfg')
+    net = cv.dnn.readNet('./model/plastic2.weights', './model/plastic.cfg')
     net.setPreferableBackend(cv.dnn.DNN_BACKEND_CUDA)
     net.setPreferableTarget(cv.dnn.DNN_TARGET_CUDA)
 
@@ -40,23 +40,25 @@ def object_detect(path):
     for (class_id, score, box) in zip(classes, scores, boxes):
         color = colors[i]
         label = f'{class_names[class_id[0]]}: {round(float(score*100), 2)}%'
-        cv.rectangle(my_img, box, color, 1)
+        cv.rectangle(my_img, box, color, 8)
         cv.putText(my_img, label, (box[0], box[1]-10), cv.FONT_HERSHEY_COMPLEX, 0.5, color, 2)
         i += 1
 
+
     objects = [class_names[x[0]] for x in classes]
     obj_count = {i: objects.count(i) for i in objects}
-    
+
     c_pos = (10,50)
-    res2 = cv.putText(my_img, 'COUNT', c_pos, cv.FONT_HERSHEY_SIMPLEX, 0.5, (209, 80, 0, 255), 2)
+    res2 = cv.putText(my_img, '', c_pos, cv.FONT_HERSHEY_SIMPLEX, 0.5, (209, 80, 0, 255), 2)
 
-    remove_dups = sorted(list(set(objects)))
-    y_axis = 70
-    for x in range(len(remove_dups)):
+    # remove_dups = sorted(list(set(objects)))
+    # y_axis = 70
+    # for x in range(len(remove_dups)):
 
-        obj_pos = (10,y_axis)
-        res3 = cv.putText(my_img, f"{remove_dups[x]}: {objects.count(remove_dups[x])}", obj_pos, cv.FONT_HERSHEY_SIMPLEX, 0.5, (209, 80, 0, 255), 2)
-        y_axis += 20
+    #     obj_pos = (10,y_axis)
+    #     res3 = cv.putText(my_img, f"{remove_dups[x]}: {objects.count(remove_dups[x])}", obj_pos, cv.FONT_HERSHEY_SIMPLEX, 0.5, (209, 80, 0, 255), 2)
+    #     y_axis += 20
+
     # cv.imwrite('output.png', text)
 
     filename = str(uuid.uuid4().hex) + '.jpg'

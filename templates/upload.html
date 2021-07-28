@@ -3,6 +3,23 @@
   <p class="lead">sample paragraph</p> -->
   <p class="lead">
     <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    {% if output %}
+    <div class="alert alert-success" role="alert">File uploaded successfully! Click the 'Show Result' button below.</div>
+    {% block script %}
+    <script type="text/javascript">
+
+      $(document).ready(function () {
+
+      window.setTimeout(function() {
+          $(".alert").fadeTo(800, 0).slideUp(800, function(){
+              $(this).remove();
+          });
+      }, 3000);
+
+      });
+      </script>
+    {% endblock %}
+    {% endif %}
     <div class="file-upload">
       <form action="/" method="POST" enctype="multipart/form-data">
       <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
