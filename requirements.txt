@@ -5,4 +5,4 @@ Jinja2==3.0.1
 MarkupSafe==2.0.1
 numpy==1.21.1
 opencv-python==4.5.3.56
-Werkzeug==2.0.1
+Werkzeug==2.2.3
